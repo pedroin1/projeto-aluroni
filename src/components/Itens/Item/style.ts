@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const massas =  "#d73b3b";
 const carnes = "#30201e";
@@ -7,6 +7,24 @@ const veganos = "#80aa40";
 
 const mobile = '768px';
 const desktop_xsm = '980px';
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const AnimatedListItem = styled.div`
+  opacity: 0;
+  transform: translateY(20px);
+  animation: ${fadeInUp} 0.5s ease forwards;
+  animation-delay: 0.1s;
+`;
 
 export const ItemContainer = styled.div`
     display: flex;

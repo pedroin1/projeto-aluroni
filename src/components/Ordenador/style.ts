@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-type PropsContainer = {
+type PropsOrdernador = {
     ativo: boolean
 }
 
@@ -13,7 +13,7 @@ export const ButtonOrdenador = styled.button`
    font-weight: bold;
    position: relative;
    height: 40px;
-   min-width: 260px;
+   min-width: 220px;
    padding: 0 30px;
    border-top-left-radius: 4px;
    border-top-right-radius: 4px;
@@ -25,7 +25,7 @@ export const ButtonOrdenador = styled.button`
     margin: 0;
    }
 `
-export const ContainerOptions = styled.div<PropsContainer>`
+export const ContainerOptions = styled.div<PropsOrdernador>`
     display: ${(props) => props.ativo ? "flex" : "none"};
     position: absolute;
     left: 0;
@@ -51,4 +51,11 @@ export const Option = styled.div`
       color: white;
       cursor: pointer;
     }
+`
+
+export const AnimatedIconContainer = styled.i<PropsOrdernador>`
+  display: flex;
+  align-items: baseline;
+  transition: all 0.3s ease;
+  transform: ${(props) => (props.ativo ? 'rotate(180deg)' : 'rotate(0deg)')};
 `
